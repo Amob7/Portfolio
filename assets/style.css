@@ -1,9 +1,19 @@
+/* Universal Tag */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* sets default display and direction of body to fit mobile */
 body {
   display: flex;
   flex-direction: column;
   line-height: 1.3;
 }
 
+/* sets up display of header, makes it column, justifies space between to space out 
+    elements, aligns it all, and adds sum color and padding*/
 header {
   display: flex;
   flex-direction: column;
@@ -14,20 +24,23 @@ header {
   color: white;
 }
 
-/* Change font size of headings */
+/* sets main header 1 background, color, and font size*/
 h1 {
   background-color: aqua;
   color: black;
   font-size: 250%;
 }
 
-/* Change the margin */
+/* sets a bottom border so that it looks like a solid underline,
+    margin, and font size*/
 h2 {
   border-bottom: 3px solid #13293d;
   margin: 2% 0;
   font-size: 200%;
 }
 
+/* sets display of the links, puts space between so the elements are spaced out,
+    padding, and sets up the mininum width*/
 nav ul {
   display: flex;
   justify-content: space-between;
@@ -35,31 +48,36 @@ nav ul {
   padding: 2px;
 }
 
+/* sets the font size, color, underline aka text dec color to aqua, and bolds the 
+    font of all the words in the header list*/
 nav a {
   font-size: 100%;
   color: black;
-  text-decoration-color: aqua;
+  text-decoration: underline 4px aqua;
   font-weight: bold;
 }
 
+/* sets default settings for everything in main*/
 main {
   display: flex;
   flex-direction: column;
   padding-left: 5%;
   flex: 1 1 0;
   max-width: 1200px;
-  margin: 5% auto;
 }
 
+/*sets default settings to the subtitle class including the image itself as 
+    the background*/
 .subtitle {
   height: 800px;
   width: 100%;
-  margin-bottom: 25px;
-  background-image: url(./assets/images/TinyEric.jpg);
+  margin-bottom: 15px;
+  background-image: url(./images/TinyEric.jpg);
   background-size: cover;
   background-position: center;
 }
 
+/* sets the default settings of the header inside the subtitle class*/
 .subtitle h1 {
   display: flex;
   justify-content: center;
@@ -67,21 +85,25 @@ main {
   margin-left: 0%;
 }
 
+/* sets default settings of everything in section */
 section {
   flex: 1 1 0;
   padding-right: 0;
 }
 
+/* sets padding for everthing in article only adding on left and right */
 article {
   padding: 12px 12px 0 0;
 }
 
+/* sets all p tags to these settings */
 article p {
   margin: 2% 0;
   font-size: 110%;
   padding-right: 5%;
 }
 
+/* sets default settings to any lists inside article */
 article ul {
   margin-left: 5%;
   margin-bottom: 2%;
@@ -89,92 +111,123 @@ article ul {
   list-style: circle;
 }
 
-button {
-  width: 100%;
-  margin: 2% 0;
-  padding: 1%;
-}
-
+/* sets defualt settings in tje link class */
 .link {
-  display: flex;
+  display: block;
   flex-direction: column;
   margin-left: 10%;
   align-items: center;
 }
 
+/* sets default settings in any button */
 button {
   width: 100%;
   margin: 0 .5%;
   font-size: 200%;
   color: #13293d;
   background-color: #fff;
-  border: none;
-  border-bottom: 3px solid #772014;
+  border: dashed 3px aqua;
 }
 
-/* The user's cursor is positioned over the element */
+/* sets image into first box */
+.link .r1{
+  background-image: url(./images/food.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* sets image into second box */
+.link .r2{
+  background-image: url(./images/teamwork.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* sets image into third box */
+.link .r3{
+  background-image: url(./images/bread.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* sets image into fourth box */
+.link .r4{
+  background-image: url(./images/building.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* sets image into fifth box */
+.link .r5{
+  background-image: url(./images/wow.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* contacts have text decoration so that when not hovering sshows an underline */
+.contacts a {
+  text-decoration: underline 5px aqua;
+  color: black;
+}
+
+/* when you hover over a button background and text color change */
 button:hover {
-  background-color: #772014;
-  color: #fff;
+  color: aqua;
+  border: solid;
 }
 
+/* when you hover over a link background and padding change */
 a:hover{
   background-color: aqua;
   padding: 2px;
 }
 
-.link .r1{
-  background-image: url(/assets/images/Tiny\ Eric.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.contacts ul {
-  text-decoration: none;
-}
-
-.contacts a {
-  color: black;
-}
-
+/* when screen is at 768 px wide or higher these settings apply*/
 @media screen and (min-width: 768px) {
+  /* header and main are now in row flex direction*/
   header,
   .main {
     flex-direction: row;
   }
 
+  /*sets h2 default to block*/
   h2{ 
     display: block;
     height: 100%;
   }
 
+  /*sets default of the buttons to row*/
   .link {
     display: flex;
     flex-direction: row;
     margin-right: 10%;
   }
   
+  /*sets default setting of button in link class*/
   .link button {
     display: flex;
     justify-content: space-between;
     width: 20%;
   }
   
+  /* sets the first button to 100% width */
   .link .r1 button {
     width: 100%;
   }
 
+  /* sets default settings of the list to row and spaces it correctly*/
   .contacts ul {
     display: flex;
     flex-direction: row;
-    text-decoration: none;
     justify-content: space-between;
     margin-left: 10%;
     margin-right: 10%;
   } 
 }
 
+/* when screen is above or equal to 992*/
 @media screen and (min-width: 992px) {
+  /* sets margin to 2% when at max screen*/
   .main{
     margin: 2%;
   }
